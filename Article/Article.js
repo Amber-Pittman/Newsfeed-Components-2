@@ -14,19 +14,22 @@ class Article {
     /* Set a click handler on the expandButton reference, calling 
     the expandArticle method.*/
     this.expandButton.addEventListener('click', () => this.expandArticle());
-    this.articleBtnOpen = this.querySelector('.btn-open');
-    this.articleBtnClose = this.querySelector('.btn-close');
+    
+    //this.articleBtnOpen = this.domElement.querySelector('.btn-open');
+    //this.articleBtnClose = this.domElement.querySelector('.btn-close');
   }
 
   expandArticle() {
     /* Using our reference to the domElement, toggle a class 
     to expand or hide the article. */
-    this.articleBtnOpen.classList.toggle('hide-btn');
+    this.article.classList.toggle('article-open');
+    this.article.classList.toggle('close');
+    //this.articleBtnOpen.classList.toggle('hide-btn');
     //this.expandButton.textContent = "Close";
-    this.articleBtnClose.classList.toggle('hide-btn');
-    this.expandButton.classList.toggle('article');
-  }
-}
+    //this.articleBtnClose.classList.toggle('hide-btn');
+    //this.expandButton.classList.toggle('article');
+  };
+};
 
 /* START HERE: 
 
@@ -44,5 +47,5 @@ const articles = document.querySelectorAll('.article');
 
 //Step 2: Return a newly Constructed DOM Element
 articles.forEach(function(article) {
-  return new Articles(article);
+  return new Article(article);
 });
